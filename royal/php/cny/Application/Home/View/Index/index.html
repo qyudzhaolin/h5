@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<!-- 微博增加 class wb -->
+<html>
+	<head>
+		<title>一句话总结你和TA的2017</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="format-detection" content="telephone=no">
+		<link rel="stylesheet" type="text/css" href="__CSS__/swiper.min.css">
+		<link rel="stylesheet" type="text/css" href="__CSS__/style.css">
+        <script type="text/javascript" src="__JS__/init.js"></script>
+		<script type="text/javascript">
+			var img="__IMG__/"
+			var url ="{:U('Index/saveInfo')}";
+		   // var nackname = "{$nickname}";
+		   // var isold = {$isold};
+
+		</script>
+		<script type="text/javascript" src="__JS__/jquery.min.js"></script>
+		<script type="text/javascript" src="__JS__/TweenMax.min.js"></script>
+
+		<script src="__JS__/createjs.min.js"></script>
+	</head>
+	<body>
+		<div class="box">
+			<!-- <div class="music" id="music-btn">
+				<audio id="audio" loop="loop" autoplay="autoplay" src="__IMG__/audio/bgmusic.mp3?v=2"></audio>
+			</div> -->
+			<!-- 列表展示 -->
+			<section class="screen" id="s1">
+				<div class="myswiper">
+					<div class="swiper-container">
+					  <div class="swiper-wrapper">
+					    <div class="swiper-slide" data-type="1" data-imgsrc="dog/dog_1.png">
+					    	<img src="__IMG__/dog/text1.png" alt="" class="text">
+					    	<img src="__IMG__/dog/dog_1.png" alt="" class="animal">
+					    </div>
+					  	<div class="swiper-slide" data-type="2" data-imgsrc="cat/cat_4.png">
+					    	<img src="__IMG__/cat/text4.png" alt="" class="text">
+					    	<img src="__IMG__/cat/cat_4.png" alt="" class="animal">
+					    </div>
+					    <div class="swiper-slide" data-type="1" data-imgsrc="dog/dog_2.png">
+					    	<img src="__IMG__/dog/text2.png" alt="" class="text">
+					    	<img src="__IMG__/dog/dog_2.png" alt="" class="animal">
+					    </div>
+					  	<div class="swiper-slide" data-type="2" data-imgsrc="cat/cat_5.png">
+					    	<img src="__IMG__/cat/text5.png" alt="" class="text">
+					    	<img src="__IMG__/cat/cat_5.png" alt="" class="animal">
+					    </div>
+					    <div class="swiper-slide" data-type="1" data-imgsrc="dog/dog_3.png">
+					    	<img src="__IMG__/dog/text3.png" alt="" class="text">
+					    	<img src="__IMG__/dog/dog_3.png" alt="" class="animal">
+					    </div>
+					  	<div class="swiper-slide" data-type="2" data-imgsrc="cat/cat_2.png">
+					    	<img src="__IMG__/cat/text2.png" alt="" class="text">
+					    	<img src="__IMG__/cat/cat_2.png" alt="" class="animal">
+					    </div>
+					    <div class="swiper-slide" data-type="1" data-imgsrc="dog/dog_4.png">
+					    	<img src="__IMG__/dog/text4.png" alt="" class="text">
+					    	<img src="__IMG__/dog/dog_4.png" alt="" class="animal">
+					    </div>
+					  	<div class="swiper-slide" data-type="2" data-imgsrc="cat/cat_1.png">
+					    	<img src="__IMG__/cat/text1.png" alt="" class="text">
+					    	<img src="__IMG__/cat/cat_1.png" alt="" class="animal">
+					    </div>
+					    <div class="swiper-slide" data-type="1" data-imgsrc="dog/dog_5.png">
+					    	<img src="__IMG__/dog/text5.png" alt="" class="text">
+					    	<img src="__IMG__/dog/dog_5.png" alt="" class="animal">
+					    </div>
+					  	<div class="swiper-slide" data-type="2" data-imgsrc="cat/cat_3.png">
+					    	<img src="__IMG__/cat/text3.png" alt="" class="text">
+					    	<img src="__IMG__/cat/cat_3.png" alt="" class="animal">
+					    </div>
+					    <div class="swiper-slide" data-type="1" data-imgsrc="dog/dog_6.png"> 
+					    	<img src="__IMG__/dog/text6.png" alt="" class="text">
+					    	<img src="__IMG__/dog/dog_6.png" alt="" class="animal">
+					    </div>
+					    <div class="swiper-slide" data-type="1" data-imgsrc="dog/dog_7.png">
+					    	<img src="__IMG__/dog/text7.png" alt="" class="text">
+					    	<img src="__IMG__/dog/dog_7.png" alt="" class="animal">
+					    </div>
+					    <div class="swiper-slide" data-type="1" data-imgsrc="dog/dog_8.png">
+					    	<img src="__IMG__/dog/text8.png" alt="" class="text">
+					    	<img src="__IMG__/dog/dog_8.png" alt="" class="animal">
+					    </div>
+
+					  </div>
+					</div>
+					<div class="btn">
+						<a href="javascript:;" class="prve_btn abs"></a>
+						<a href="javascript:;" class="next_btn abs"></a>
+					</div>
+				</div>
+				<img src="__IMG__/text.png" alt="" class="main_text">
+				<div class="file_box">
+					<img src="__IMG__/btn1.png" alt="">
+					<img src="__IMG__/btn2.png" alt="">
+					
+				</div>
+			</section>
+			<!-- 列表展示 -->
+			<!-- 图片上传 -->
+			<section class="screen" id="s2">
+				<div class="main dogcanvas">
+					<div class="canavs_box">						
+						<canvas width="310" height="310" id="upcanvas"></canvas>
+					</div>
+					<span class="frame"></span>
+					
+				</div>
+				<div class="default-img"></div>
+				
+				<div class="btn">
+					<a href="javascript:;" class="prve_btn abs"></a>
+					<a href="javascript:;" class="next_btn abs"></a>
+				</div>
+				<!-- 测点击文字 -->
+				<img src="__IMG__/s2_text.png" alt="" class="text">
+			
+				<div class="btn-wrap">
+						<div class="btn1"></div>
+						<input type="file" id="filebtn" accept="image/*">
+				</div>
+				<div class="up_btn">
+						<img src="__IMG__/btn3.png">
+				</div>
+			</section>
+			<!-- 图片上传 -->
+			<!-- 文字填写 -->
+			<section class="screen" id="s3">
+				<div class="user-default">
+						<!-- <img src="__IMG__/dog/dog_8.png" alt="" class="animal"> -->
+				</div>
+				<div class="main">
+					<div class="canavs_box">						
+						<img alt="" class="img">
+					</div>
+					<span class="frame"></span>
+				</div>
+				<textarea id="write_text" placeholder="请在此写下你与TA的故事...." maxlength="30"></textarea>
+				<p class="disabled_box"></p>
+				<div class="up_btn">
+					<img src="__IMG__/btn3.png" alt="">
+				</div>
+				<img src="__IMG__/text.png" alt="" class="main_text">
+				<div class="share_ts">
+					<img src="__IMG__/share_text.png" alt="">
+				</div>
+			</section>
+			<!-- 文字填写 -->
+
+
+		</div>
+		<script type="text/javascript" src="__JS__/fabric.min.js"></script>
+		<script type="text/javascript" src="__JS__/exif.js"></script>
+		<script type="text/javascript" src="__JS__/swiper.jquery.min.js"></script>
+		<script src="__JS__/app.js?ver=<?php echo time();?>"></script><script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+		<script type="text/javascript"src=" https://max-digital-api-dev.oss-cn-shanghai.aliyuncs.com/js/interface/service/spreading-tree/mco-1-1.js"></script>
+    <script type="text/javascript">
+        var userinfo = [{$userinfo}];
+        __$$_obj.configure('wY5kzr6h9RJGZvmO','','Zoz5aCD9GQNP64OHeuwjrRgd3lxJpn0W',userinfo);
+    </script>
+    <script type="text/javascript">
+        //alert(location.href.split('#')[0]);
+        wx.config({
+            debug: false,
+            appId: '{$signPackage.appId}',
+            timestamp: '{$signPackage.timestamp}',
+            nonceStr: '{$signPackage.nonceStr}',
+            signature: '{$signPackage.signature}',
+            jsApiList: [
+                'checkJsApi',
+                'onMenuShareTimeline',
+                'onMenuShareAppMessage',
+                'onMenuShareQQ',
+                'onMenuShareWeibo',
+                'hideMenuItems',
+                'showMenuItems',
+                'hideAllNonBaseMenuItem',
+                'showAllNonBaseMenuItem'
+            ]
+        });
+        var shareData64 = {
+            title: "我和TA的2017总结，有猫有狗的人生赢家",                 //必填,分享标题
+            desc:  "我和TA的2017总结，有猫有狗的人生赢家",  //选填,分享描述
+            imgUrl: "http://royal-canin.cdn.max-digital.cn/H5/royal/canin/images/share.jpg",   //选填,分享图链接
+            link:   "http://campaign.royal-canin.max-digital.cn"
+        };
+
+        wx.ready(function () {
+            //默认显示
+            wx.showOptionMenu();
+            wx.onMenuShareAppMessage(window.__$$_obj.makeAppMessageData(shareData64));
+            wx.onMenuShareTimeline(window.__$$_obj.makeTimelineData(shareData64));
+            wx.onMenuShareQZone(window.__$$_obj.makeQZoneData(shareData64));
+            wx.onMenuShareWeibo(window.__$$_obj.makeWeiboData(shareData64));
+            wx.onMenuShareQQ(window.__$$_obj.makeQQData(shareData64));
+        });
+    </script>
+	</body>
+</html>

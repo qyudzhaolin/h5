@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!-- 微博增加 class wb -->
+<html>
+	<head>
+		<title>一句话总结你和TA的2017</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="format-detection" content="telephone=no">
+		<link rel="stylesheet" type="text/css" href="__CSS__/style.css">
+		<script type="text/javascript">
+		if(/Android (\d+\.\d+)/.test(navigator.userAgent)){
+		    var version = parseFloat(RegExp.$1);
+		    if(version>2.3){
+		      var phoneScale = parseInt(window.screen.width)/640;
+		      document.write('<meta name="viewport" content="width=640, minimum-scale = '+ phoneScale +', maximum-scale = '+ phoneScale +', target-densitydpi=device-dpi">');
+		    }else{
+		      document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+		    }
+		}else{
+		    document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+		}
+		</script>
+	</head>
+	<body>
+		<div class="box">
+			<!-- 文字填写 -->
+			<section class="screen" id="share">
+				<!-- 如果selectType 是0 -->
+				<php>if($info['type']==1){
+					$cs = 'cat';
+				}else{
+					$cs = 'dog';
+				}</php>
+				<eq name="info.select_type" value="1">
+				<div class="main {$cs}canvas">
+					<div class="canavs_box">						
+						<img src="{$info.img}" alt="" class="img">
+					</div>
+					<span class="frame"></span>
+				</div>
+				</eq>
+				<!-- 0 end -->
+				<!-- selectType 是1 -->
+				<eq name="info.select_type" value="0">
+				<img src="{$info.img}" class="default_img">
+				</eq>
+				<!-- 1 end -->
+				<p id="write_text">{$info.content}</p>
+				<div class="up_btn">
+					<a href="{:U('index/index')}">						
+						<img src="__IMG__/btn1.png" alt="">
+						<img src="__IMG__/btn2.png" alt="">
+					</a>
+				</div>
+				<img src="__IMG__/text.png" alt="" class="main_text">
+				<div class="share_ts">
+					<img src="__IMG__/share_text.png" alt="">
+				</div>
+			</section>
+			<!-- 文字填写 -->
+		</div>
+		<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+		<script type="text/javascript">
+            //alert(location.href.split('#')[0]);
+			var id = "{$info.id}";
+            wx.config({
+                debug: false,
+                appId: '{$signPackage.appId}',
+                timestamp: '{$signPackage.timestamp}',
+                nonceStr: '{$signPackage.nonceStr}',
+                signature: '{$signPackage.signature}',
+                jsApiList: [
+                    'checkJsApi',
+                    'onMenuShareTimeline',
+                    'onMenuShareAppMessage',
+                    'onMenuShareQQ',
+                    'onMenuShareWeibo',
+                    'hideMenuItems',
+                    'showMenuItems',
+                    'hideAllNonBaseMenuItem',
+                    'showAllNonBaseMenuItem'
+                ]
+            });
+            var shareData64 = {
+				title: "我和TA的2017总结，有猫有狗的人生赢家",                 //必填,分享标题
+				desc:  "我和TA的2017总结，有猫有狗的人生赢家",  //选填,分享描述
+				imgUrl: "http://royal-canin.cdn.max-digital.cn/H5/royal/canin/images/share.jpg",   //选填,分享图链接
+                link:   "http://campaign.royal-canin.max-digital.cn/home/index/share/id/"+id
+            };
+
+            wx.ready(function () {
+                //默认显示
+                wx.showOptionMenu();
+                wx.onMenuShareAppMessage(shareData64);
+                wx.onMenuShareTimeline(shareData64);
+                wx.onMenuShareQZone(shareData64);
+                wx.onMenuShareWeibo(shareData64);
+                wx.onMenuShareQQ(shareData64);
+            });
+		</script>
+	</body>
+</html>

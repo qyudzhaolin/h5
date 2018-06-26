@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!-- 微博增加 class wb -->
+<html>
+	<head>
+		<title>定制属于你和TA的2017</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="format-detection" content="telephone=no">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script type="text/javascript">
+		if(/Android (\d+\.\d+)/.test(navigator.userAgent)){
+		    var version = parseFloat(RegExp.$1);
+		    if(version>2.3){
+		      var phoneScale = parseInt(window.screen.width)/640;
+		      document.write('<meta name="viewport" content="width=640, minimum-scale = '+ phoneScale +', maximum-scale = '+ phoneScale +', target-densitydpi=device-dpi">');
+		    }else{
+		      document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+		    }
+		}else{
+		    document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+		}
+		</script>
+	</head>
+	<body>
+		<div class="box">
+			<!-- 文字填写 -->
+			<section class="screen" id="share">
+				<!-- 如果selectType 是0 -->
+				<div class="main catcanvas">
+					<div class="canavs_box">						
+						<img src="" alt="" class="img">
+					</div>
+					<span class="frame"></span>
+				</div>
+				<!-- 0 end -->
+				<!-- selectType 是1 -->
+				<img src="" class="default_img">
+				<!-- 1 end -->
+				<p id="write_text">请在此写下你与TA的故事请在此写下你与TA的故事</p>
+				<div class="up_btn">
+					<a href="index.html">						
+						<img src="images/btn1.png" alt="">
+						<img src="images/btn2.png" alt="">
+					</a>
+				</div>
+				<img src="images/text.png" alt="" class="main_text">
+				<div class="share_ts">
+					<img src="images/share_text.png" alt="">
+				</div>
+			</section>
+			<!-- 文字填写 -->
+		</div>
+	</body>
+</html>

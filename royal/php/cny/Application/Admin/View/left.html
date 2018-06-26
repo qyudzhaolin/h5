@@ -1,0 +1,16 @@
+<!-- S-侧边栏 -->
+<div class="siderBar">
+    <php>$username = session('username');</php>
+	<ul>
+        <li class="y_s">
+            <a href="{:U('Index/index')}" <if condition="$controller_name eq 'Index'">class="current"</if>>
+            <span class="icon_img"></span>
+            <span class="icon_text">申领信息</span>
+            </a>
+        </li>
+       
+
+
+	</ul>
+</div>
+<!-- E-侧边栏 -->

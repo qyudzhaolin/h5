@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!-- 微博增加 class wb -->
+<html>
+	<head>
+		<title>属于你和TA的2017</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="format-detection" content="telephone=no">
+		<link rel="stylesheet" type="text/css" href="__CSS__/style.css">
+		<script type="text/javascript">
+		if(/Android (\d+\.\d+)/.test(navigator.userAgent)){
+		    var version = parseFloat(RegExp.$1);
+		    if(version>2.3){
+		      var phoneScale = parseInt(window.screen.width)/640;
+		      document.write('<meta name="viewport" content="width=640, minimum-scale = '+ phoneScale +', maximum-scale = '+ phoneScale +', target-densitydpi=device-dpi">');
+		    }else{
+		      document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+		    }
+		}else{
+		    document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+		}
+		</script>
+			<script type="text/javascript">
+        var img="__IMG__/"
+        var url ="{:U('Index/saveInfo')}";
+       // var nackname = "{$nickname}";
+       // var isold = {$isold};
+
+    </script>
+	</head>
+	<body>
+		<div class="box">
+			<!-- 文字填写 -->
+			<section class="screen" id="share">
+				<div class="main catcanvas">
+					<div class="canavs_box">						
+						<img src="__IMG__/kaola.jpg" alt="" class="img">
+					</div>
+					<span class="frame"></span>
+				</div>
+				<p id="write_text">请在此写下你与TA的故事请在此写下你与TA的故事</p>
+				<div class="up_btn">
+					<a href="index.html">						
+						<img src="__IMG__/btn1.png" alt="">
+						<img src="__IMG__/btn2.png" alt="">
+					</a>
+				</div>
+				<img src="__IMG__/text.png" alt="" class="main_text">
+				<div class="share_ts">
+					<img src="__IMG__/share_text.png" alt="">
+				</div>
+			</section>
+			<!-- 文字填写 -->
+		</div>
+		<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+		<script type="text/javascript">
+            //alert(location.href.split('#')[0]);
+			var id = "{$info.id}";
+            wx.config({
+                debug: false,
+                appId: '{$signPackage.appId}',
+                timestamp: '{$signPackage.timestamp}',
+                nonceStr: '{$signPackage.nonceStr}',
+                signature: '{$signPackage.signature}',
+                jsApiList: [
+                    'checkJsApi',
+                    'onMenuShareTimeline',
+                    'onMenuShareAppMessage',
+                    'onMenuShareQQ',
+                    'onMenuShareWeibo',
+                    'hideMenuItems',
+                    'showMenuItems',
+                    'hideAllNonBaseMenuItem',
+                    'showAllNonBaseMenuItem'
+                ]
+            });
+            var shareData64 = {
+                title: "三福圣诞大FUN送，DIY贺卡赢大礼",                 //必填,分享标题
+                desc:  "{$nickname}刚刚在线DIY了一张画风清奇的圣诞贺卡，没想到TA真情实感地说出了这种话…",  //选填,分享描述
+                imgUrl: "http://christmaswish.sanfu.max-digital.cn/Public/home/img/share.jpg",   //选填,分享图链接
+                link:   "http://campaign.royal-canin.cn/home/index/share/id/"+id
+
+            };
+
+            wx.ready(function () {
+                //默认显示
+                wx.showOptionMenu();
+                wx.onMenuShareAppMessage(shareData64);
+                wx.onMenuShareTimeline(shareData64);
+                wx.onMenuShareQZone(shareData64);
+                wx.onMenuShareWeibo(shareData64);
+                wx.onMenuShareQQ(shareData64);
+            });
+		</script>
+	</body>
+</html>

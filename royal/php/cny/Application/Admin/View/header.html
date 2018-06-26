@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	<title>{$head_title|default="管理后台"}</title>
+	<!-- 公共引用部分 -->
+	<link rel="stylesheet" type="text/css" href="__CSS__/bootstrap.min.css">
+	<script type="text/javascript" src="__JS__/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="__JS__/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="__CSS__/allhead.css">
+	<!-- 公共引用部分 -->
+</head>
+<body>
+	<!-- S-头部 -->
+	<div class="head">
+		<span class="logo"></span>
+		<div class="control">
+			<span class="translateY">{$real_name}</span>
+			<a href="{:U('Login/logout')}" class="translateY"><strong>退出</strong></a>
+		</div>
+	</div>
+	<!--E-头部 -->
+	
+	<!--S-主体部分 -->
+	<div class="connet">
+	
+	<include file="./Application/Admin/View/left.html" />
